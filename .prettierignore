@@ -1,0 +1,6 @@
+node_modules
+data
+package-lock.json
+
+# Verbatim captures from the live sites; reformatting would change what is tested.
+test/fixtures

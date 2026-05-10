@@ -1,0 +1,21 @@
+# dependencies
+node_modules
+
+# runtime state
+data
+
+# secrets
+.env
+.env.local
+
+# raw untrimmed page captures (test/fixtures/ is committed on purpose)
+test/raw
+
+# logs and caches
+*.log
+*.tsbuildinfo
+coverage
+
+# editors / OS
+.idea
+.DS_Store

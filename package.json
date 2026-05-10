@@ -1,0 +1,31 @@
+{
+  "name": "rentinel-mini",
+  "version": "1.0.0",
+  "description": "Telegram alerts for new Serbian rental listings",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env src/main.ts",
+    "start:once": "node --env-file-if-exists=.env src/main.ts --once",
+    "test": "node --test",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "fixtures": "node --env-file-if-exists=.env scripts/refresh-fixtures.ts"
+  },
+  "dependencies": {
+    "cheerio": "^1.2.0",
+    "puppeteer": "^24.43.0",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "prettier": "3.9.6",
+    "typescript": "^5.9.3"
+  }
+}
