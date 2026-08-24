@@ -49,18 +49,23 @@ test("halooglasi: maps every field of the first card", () => {
   const [first] = parseHalooglasi(readFixture("halooglasi.html"));
   assert.ok(first);
 
-  assert.equal(first.name, "Jednoiposoban stan izdavanje Vracar");
+  assert.equal(first.name, "Rastka Petrovica, 1.5 namesten stan, I sprat");
   assert.equal(
     first.location,
-    "Beograd, Opština Voždovac, Lekino brdo, Gospodara Vučića",
+    "Beograd, Opština Voždovac, Medaković 1, Rastka Petrovica",
   );
-  assert.equal(first.price.raw, "400 €");
-  assert.equal(first.price.value, 400);
+  assert.equal(first.price.raw, "300 €");
+  assert.equal(first.price.value, 300);
   assert.equal(first.price.currency, "EUR");
-  assert.equal(first.datePosted, "2026-08-21");
+  assert.equal(first.datePosted, "2026-08-24");
+  assert.deepEqual(first.features, [
+    "34 m²",
+    "Broj soba: 1.5",
+    "Spratnost: I/4",
+  ]);
   assert.equal(
     first.url,
-    "https://www.halooglasi.com/nekretnine/izdavanje-stanova/jednoiposoban-stan-izdavanje-vracar/5425642257182",
+    "https://www.halooglasi.com/nekretnine/izdavanje-stanova/rastka-petrovica-1-5-namesten-stan-i-sprat/5425635883767",
   );
 });
 
@@ -83,21 +88,21 @@ test("4zida: maps every field of the first card", () => {
   const [first] = parse4zida(readFixture("4zida.html"));
   assert.ok(first);
 
-  assert.equal(first.name, "Centar");
+  assert.equal(first.name, "Kumodraž");
   assert.equal(first.location, "Voždovac opština, Beograd");
   assert.equal(first.price.raw, "350 €");
   assert.equal(first.price.value, 350);
   assert.equal(first.price.currency, "EUR");
-  assert.equal(first.datePosted, "2026-08-21");
+  assert.equal(first.datePosted, "2026-08-23");
   assert.deepEqual(first.features, [
-    "1 soba",
+    "0.5 soba",
     "Namešteno",
-    "Na gas",
+    "Etažno",
     "Useljivo",
-    "Vlasnik",
+    "Agencija",
   ]);
   assert.equal(
     first.url,
-    "https://www.4zida.rs/izdavanje-stanova/centar-vozdovac-opstina-beograd/jednosoban-stan/6a8862176edda5403f0db5b4",
+    "https://www.4zida.rs/izdavanje-stanova/kumodraz-vozdovac-opstina-beograd/garsonjera/6a8aba0d0a629a213d089525",
   );
 });
